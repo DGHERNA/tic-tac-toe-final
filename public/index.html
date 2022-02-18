@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="../src/styles/style.css">
+  <title>Frontend Mentor | Tic Tac Toe</title>
+</head>
+<body>
+
+      <!-- New game menu starter -->
+  <main class="main__container">
+    <section class="start__container">
+
+      <div class="start__game-menu">
+        <div class="game-logo"><img src="../public/assets/logo.svg" alt="game logo"> </div>
+  
+        <div class="start__menu-options">
+          <p class="start__first-mark">Pick player 1's mark</p>
+          <div class="start__pick-mark">
+            <div class="start__icon-container">
+              <img class="icon x-icon" src="../public/assets/icon-x.svg" alt="x icon">
+            </div>
+            <div class="start__icon-container">
+              <img class="icon o-icon" src="../public/assets/icon-o.svg" alt="o icon">
+            </div>
+            
+          </div>
+          <p class="start__remember">Remember: X goes first</p>
+        </div>
+  
+        <div class="button">
+          <button class="button__new-game button--cpu">New Game (vs CPU)</button>
+          <button class="button__new-game button--player">New Game (vs player) </button>
+        </div>
+      </div>
+
+    </section>
+      <!-- New game menu starter end -->
+
+
+
+      <!-- Game borad vs Cpu -->
+    <section class="main-board-container board__container-hidden">
+      <div class="game__board">
+        <div class="game__board-header">
+          <div class="game__board-logo"> <img src="../public/assets/logo.svg" alt="Logo image"> </div>
+          <div class="game__board-turn">
+              <!-- x/o icon --> 
+              <div class="turn-mark">
+                  <img src="../public/assets/icon-x.svg" alt="Turn mark icon" class="turn-img">
+              </div>
+              <p class="turn-paragraph">turn</p>
+          </div>
+
+          <div class="restart-btn">
+              <img src="../public/assets/icon-restart.svg" alt="Restart icon" class="restart-img">
+          </div>
+       </div>
+
+
+          <!-- Game board --> 
+        <div class="game-container">
+
+          <div class="grid__board">
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+   
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+              <div class="grid__board-mark">
+
+              </div>
+          </div>
+
+          <!-- Game information -->
+          <div class="game__info">
+              <div class="match-info your-score">
+                  <p class="info">X (You)</p>
+                  <div class="results your-score">14</div>
+              </div>
+              <div class="match-info ties-score">
+                  <p class="info">Ties</p>
+                  <div class="results tie-matches">32</div>
+              </div>
+              <div class="match-info cpu-score">
+                  <p class="info">0 (CPU)</p>
+                  <div class="results cpu-score">11</div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+        
+    </section>
+      <!-- Game board vs CPU end -->
+  </main>
+
+
+
+
+
+
+<script src="../src/App.js"></script>
+</body>
+</html>

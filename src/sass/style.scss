@@ -1,0 +1,60 @@
+//Colors
+
+//Primary 
+$Dark-Navy: #1A2A33;
+$Semi-Dark-Navy: #1F3641;
+$Silver: #A8BFC9;
+$Light-Yellow: #F2B137;
+$Light-Blue: #31C3BD;
+
+//Hover
+$Silver-Hover: #DBE8ED;
+$Light-Blue-Hover: #65E9E4;
+$Light-Yellow-Hover: #FFC860;  
+
+//Box Shadows
+$Dark-Navy-Shadow: #0e1d24;
+$Silver-Shadow: #8596a0;
+$Light-Yellow-Shadow: #b88320;
+$Light-Blue-Shadow: #1e8380;
+
+
+//Media Queries
+$tablet: 768px;
+$desktop: 1440px;
+
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;    
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;    
+    }
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@import "./general";
+@import "./starter"

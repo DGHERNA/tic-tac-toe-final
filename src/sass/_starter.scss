@@ -1,0 +1,417 @@
+//Game starter options style
+
+.main__container {
+    position: relative;
+
+    .board__container-hidden {
+        display: none;    
+    }
+}
+
+.start__container {
+    @include flexCenter(row);
+    width: 37.5rem;
+    height: 66.7rem;
+    background-color: $Dark-Navy;
+}
+
+.start__game-menu {
+    @include flexCenter(column);
+    width: 32.7rem;
+    height: 42.9rem;
+    row-gap: 3rem;
+    // border: 1px solid magenta;
+
+    .start__menu-options{
+        background-color: $Semi-Dark-Navy;
+        @include flexCenter(column);
+        border-radius: 1.5rem;
+        box-shadow: 0 1rem $Dark-Navy-Shadow;
+        width: 32.6rem;
+        height: 19.5rem;
+        row-gap: 2rem;
+
+        .start__first-mark {
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-size: 1.5rem;
+            color: $Silver;
+            font-weight: 510;
+        }
+
+        .start__remember {
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            font-size: 1.4rem;
+            color: $Silver-Shadow;
+            font-weight: 400;
+        }
+
+    }
+
+    .start__pick-mark {
+        background-color: $Dark-Navy;
+        @include flexAround;
+        border-radius: 1rem;
+        width: 28rem;
+        height: 6.5rem;
+
+
+        .start__icon-container {
+            @include flexAround;
+            width: 42.9%;
+            height: 75%;
+            border-radius: 1rem;
+            transition: all 700ms ease-in-out;
+
+            &:hover {
+                background-color: $Silver;
+                cursor: pointer;
+
+                .icon {
+                    filter: brightness(0) saturate(100%)
+                    invert(10%) sepia(6%) 
+                    saturate(4628%) hue-rotate(158deg) 
+                    brightness(100%) contrast(87%);
+                }  
+            }
+
+        }
+
+
+        .icon {
+            width: 26%;
+            filter: brightness(0) saturate(100%)
+                    invert(94%) sepia(2%) 
+                    saturate(6105%) hue-rotate(173deg) 
+                    brightness(84%) contrast(84%);                          
+        }
+    }
+
+ 
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2.5rem;
+
+    .button__new-game {
+        width: 32.5rem;
+        height: 5rem;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        border-radius: 1.5rem;
+        border: none;
+
+    }
+
+    .button--cpu {
+        background-color: $Light-Yellow;
+        box-shadow: 0 1rem $Light-Yellow-Shadow;
+
+        &:hover {
+            background-color: $Light-Yellow-Hover;
+            cursor: pointer;
+        }
+    }
+
+    .button--player {
+        background-color: $Light-Blue;
+        box-shadow: 0 1rem $Light-Blue-Shadow;
+
+        &:hover {
+            background-color: $Light-Blue-Hover;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+//Game board style
+
+.main-board-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $Dark-Navy;
+    @include flexCenter(row);
+    top: 0;   
+
+
+    // display: none;  
+}
+
+.game__board {
+    width: 46rem;
+    height: 62.3rem;
+    @include flexCenter (column);
+    position: relative;
+    gap: 4rem;   
+}
+
+.game__board-header {
+    @include flexBetween;
+    width: 32.8rem;
+}
+
+.game__board-turn {
+    width: 9.6rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $Semi-Dark-Navy;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem $Dark-Navy-Shadow;
+    cursor: pointer;
+
+    .turn-mark {
+
+        .turn-img{
+            width: 1.6rem;
+            filter: brightness(0) saturate(100%)
+            invert(80%) sepia(10%) 
+            saturate(464%) hue-rotate(153deg) 
+            brightness(92%) contrast(91%);
+        }
+    }
+
+    .turn-paragraph{
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $Silver;
+    }
+}
+
+.restart-btn {
+    background-color: $Silver;
+    width: 4rem;
+    height: 3.5rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 .5rem $Silver-Shadow;
+    cursor: pointer;
+
+    .restart-img {
+        width: 1.7rem;
+    }
+
+    &:hover {
+        background-color: $Silver-Hover;
+    }
+}
+
+.game-container {
+    width: 32.8rem;
+    height: 51.6rem;
+    @include flexCenter (column); 
+    gap: 3rem;  
+    
+}
+
+.grid__board {
+    width: 32.8rem;
+    height: 32.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 9.6rem);
+    gap: 2rem;   
+
+    
+    .grid__board-mark {
+        @include flexCenter(row);
+        height: 9.5rem;
+        box-shadow: 0 .7rem $Dark-Navy-Shadow;
+        border-radius: 1.5rem;
+        background-color: $Semi-Dark-Navy;
+        cursor: pointer;
+
+        .picked-mark {
+            width: 4rem;
+        }
+
+        &:hover {
+            
+            background-image: url('/public/assets/icon-x-outline.svg');
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: 4rem;
+        }
+    }
+
+    .random-mark {
+        width: 4rem; 
+        // display: none;
+     }
+
+
+}
+
+
+.game__info {    
+    display: flex;
+    justify-content: space-between;
+    width: 32.8rem;
+
+    .match-info {
+        width: 9.6rem;
+        height: 6.4rem;
+        border-radius: 1rem;
+        @include flexCenter (column);
+
+        .info{
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            letter-spacing: .1rem;
+        }
+
+        .results{
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: .1rem;
+        }
+    }
+
+    .your-score{
+        background-color: $Light-Blue;
+    }
+    .ties-score {
+        background-color: $Silver;
+    }
+    .cpu-score{
+        background-color: $Light-Yellow;
+    }
+}
+
+
+// media queries Start game
+
+@media (min-width: $tablet) {
+  .start__container {
+    width: 76rem;
+    height: 102.4rem;
+  }  
+
+  .start__game-menu {
+    width: 46rem;   
+    
+    .start__menu-options{
+        width: 46rem;
+        height: 20.5rem;
+    }
+
+    .start__pick-mark {
+        width: 41.2rem;
+
+        .start__icon-container {
+            .icon {
+                width: 3.2rem;
+            }
+        }
+    }
+
+    .button {
+        width: 46rem;
+        height: 15.4rem;
+
+        .button__new-game {
+            width: 46rem;    
+        }
+    }
+  }
+
+
+}
+
+@media (min-width: $desktop) {
+    .start__container {
+        width: 144rem;
+        height: 90rem;
+    }   
+
+    .start__menu-options {
+        .start__pick-mark {
+            justify-content: center;
+            height: 7.2rem;  
+
+           .start__icon-container {
+            background-color: $Semi-Dark-Navy; 
+            width: 19.8rem; 
+
+            .icon {
+                width: 3.2rem;    
+            }
+           } 
+        }
+    }
+}
+
+
+//Media queries Game board
+
+@media (min-width: $tablet) {
+    .main-board-container {
+    
+        .game__board {
+            width: 76rem;
+            height: 102.4rem;    
+        }
+
+        .game__board-header {
+            width: 46rem;
+        }
+
+        .game-container {
+            width: 46rem;
+            height: 62.3rem;    
+        }
+
+        .grid__board {
+            width: 46rem;  
+            height: 62.3rem; 
+            gap: 6.5rem;
+            row-gap: inherit;
+            .grid__board-mark {
+                width: 14rem;
+                height: 14rem;
+
+               .picked-mark {
+                    width: 6.4rem;
+                }
+
+                &:hover {
+                    background-size: 6.4rem;
+                }
+            }
+            
+        }
+    
+        .game__info {
+            width: 45.9rem;
+            
+            .match-info {
+                width: 14rem; 
+                height: 7.2rem;   
+            }
+        }
+    }    
+}
+
+@media (min-width: $desktop) {
+    .main-board-container {
+        .game__board {
+            width: 144rem;
+            height: 90rem;
+        }    
+    }        
+}
