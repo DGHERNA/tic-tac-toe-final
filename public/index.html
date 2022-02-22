@@ -10,6 +10,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="../src/styles/style.css">
+  <script defer src="../src/App.js"></script>
   <title>Frontend Mentor | Tic Tac Toe</title>
 </head>
 <body>
@@ -24,14 +25,14 @@
         <div class="start__menu-options">
           <p class="start__first-mark">Pick player 1's mark</p>
           <div class="start__pick-mark">
-            <div class="start__icon-container">
+            <div class="start__icon-container x-container">
               <img class="icon x-icon" src="../public/assets/icon-x.svg" alt="x icon">
             </div>
-            <div class="start__icon-container">
+            <div class="start__icon-container o-container">
               <img class="icon o-icon" src="../public/assets/icon-o.svg" alt="o icon">
-            </div>
-            
+            </div>  
           </div>
+
           <p class="start__remember">Remember: X goes first</p>
         </div>
   
@@ -47,14 +48,15 @@
 
 
       <!-- Game borad vs Cpu -->
-    <section class="main-board-container board__container-hidden">
+    <section class="main-board-container  board__container-hidden">
       <div class="game__board">
         <div class="game__board-header">
-          <div class="game__board-logo"> <img src="../public/assets/logo.svg" alt="Logo image"> </div>
+           <div class="game__board-logo">  <img src="../public/assets/logo.svg" alt="Logo image"></div>
           <div class="game__board-turn">
               <!-- x/o icon --> 
               <div class="turn-mark">
-                  <img src="../public/assets/icon-x.svg" alt="Turn mark icon" class="turn-img">
+                  <img src="../public/assets/icon-x.svg" alt="X icon turn" class="turn-img x-turn">
+                  <img src="../public/assets/icon-o.svg" alt="O icon turn" class="turn-img o-turn">
               </div>
               <p class="turn-paragraph">turn</p>
           </div>
@@ -70,6 +72,10 @@
 
           <div class="grid__board">
               <div class="grid__board-mark">
+                
+
+              </div>
+              <div class="grid__board-mark ">
 
               </div>
               <div class="grid__board-mark">
@@ -85,10 +91,7 @@
 
               </div>
               <div class="grid__board-mark">
-   
-              </div>
-              <div class="grid__board-mark">
-
+ 
               </div>
               <div class="grid__board-mark">
 
@@ -126,6 +129,6 @@
 
 
 
-<script src="../src/App.js"></script>
+
 </body>
 </html>

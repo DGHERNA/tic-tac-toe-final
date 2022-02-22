@@ -57,6 +57,16 @@
         height: 6.5rem;
 
 
+        .active-mark {
+            background-color: $Silver;
+            .icon {
+                filter: brightness(0) saturate(100%)
+                invert(10%) sepia(6%) 
+                saturate(4628%) hue-rotate(158deg) 
+                brightness(100%) contrast(87%);
+            }  
+        }
+
         .start__icon-container {
             @include flexAround;
             width: 42.9%;
@@ -75,8 +85,8 @@
                     brightness(100%) contrast(87%);
                 }  
             }
-
         }
+
 
 
         .icon {
@@ -107,6 +117,11 @@
         font-weight: 600;
         border-radius: 1.5rem;
         border: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(0.96);    
+        }
 
     }
 
@@ -142,9 +157,6 @@
     background-color: $Dark-Navy;
     @include flexCenter(row);
     top: 0;   
-
-
-    // display: none;  
 }
 
 .game__board {
@@ -169,7 +181,6 @@
     background-color: $Semi-Dark-Navy;
     border-radius: .5rem;
     box-shadow: 0 .5rem $Dark-Navy-Shadow;
-    cursor: pointer;
 
     .turn-mark {
 
@@ -179,6 +190,14 @@
             invert(80%) sepia(10%) 
             saturate(464%) hue-rotate(153deg) 
             brightness(92%) contrast(91%);
+        }
+
+        .o-turn {
+            display: none;
+        }
+
+        .x-turn {
+            display: none;
         }
     }
 
@@ -201,6 +220,7 @@
     align-items: center;
     box-shadow: 0 .5rem $Silver-Shadow;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     .restart-img {
         width: 1.7rem;
@@ -208,8 +228,12 @@
 
     &:hover {
         background-color: $Silver-Hover;
+        transform: scale(0.96); 
     }
 }
+
+
+// Game board design
 
 .game-container {
     width: 32.8rem;
@@ -235,12 +259,8 @@
         background-color: $Semi-Dark-Navy;
         cursor: pointer;
 
-        .picked-mark {
-            width: 4rem;
-        }
 
         &:hover {
-            
             background-image: url('/public/assets/icon-x-outline.svg');
             background-repeat: no-repeat;
             background-position-x: center;
@@ -249,13 +269,31 @@
         }
     }
 
+    .show-x{
+        background-image: url('/public/assets/icon-x.svg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 4rem;
+    }
+
+    .show-o{
+        background-image: url('/public/assets/icon-o.svg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 4rem;
+    }
+
     .random-mark {
         width: 4rem; 
         // display: none;
      }
 
 
+
 }
+
 
 
 .game__info {    
@@ -313,6 +351,16 @@
     .start__pick-mark {
         width: 41.2rem;
 
+        .active-mark {
+            background-color: $Silver;
+            .icon {
+                filter: brightness(0) saturate(100%)
+                invert(10%) sepia(6%) 
+                saturate(4628%) hue-rotate(158deg) 
+                brightness(100%) contrast(87%);
+            }  
+        }
+
         .start__icon-container {
             .icon {
                 width: 3.2rem;
@@ -351,7 +399,18 @@
             .icon {
                 width: 3.2rem;    
             }
+
            } 
+
+           .active-mark {
+            background-color: $Silver;
+            .icon {
+                filter: brightness(0) saturate(100%)
+                invert(10%) sepia(6%) 
+                saturate(4628%) hue-rotate(158deg) 
+                brightness(100%) contrast(87%);
+            }  
+        }
         }
     }
 }
@@ -381,6 +440,7 @@
             height: 62.3rem; 
             gap: 6.5rem;
             row-gap: inherit;
+
             .grid__board-mark {
                 width: 14rem;
                 height: 14rem;
@@ -392,6 +452,16 @@
                 &:hover {
                     background-size: 6.4rem;
                 }
+            }
+
+            .show-x {
+                width: 14rem;
+                background-size: 6.4rem;
+            }
+
+            .show-o {
+                width: 14rem;
+                background-size: 6.4rem;
             }
             
         }

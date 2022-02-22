@@ -79,6 +79,12 @@ body {
   width: 28rem;
   height: 6.5rem;
 }
+.start__game-menu .start__pick-mark .active-mark {
+  background-color: #A8BFC9;
+}
+.start__game-menu .start__pick-mark .active-mark .icon {
+  filter: brightness(0) saturate(100%) invert(10%) sepia(6%) saturate(4628%) hue-rotate(158deg) brightness(100%) contrast(87%);
+}
 .start__game-menu .start__pick-mark .start__icon-container {
   display: flex;
   justify-content: space-around;
@@ -116,6 +122,10 @@ body {
   font-weight: 600;
   border-radius: 1.5rem;
   border: none;
+  transition: all 0.3s ease;
+}
+.button .button__new-game:hover {
+  transform: scale(0.96);
 }
 .button .button--cpu {
   background-color: #F2B137;
@@ -173,11 +183,16 @@ body {
   background-color: #1F3641;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem #0e1d24;
-  cursor: pointer;
 }
 .game__board-turn .turn-mark .turn-img {
   width: 1.6rem;
   filter: brightness(0) saturate(100%) invert(80%) sepia(10%) saturate(464%) hue-rotate(153deg) brightness(92%) contrast(91%);
+}
+.game__board-turn .turn-mark .o-turn {
+  display: none;
+}
+.game__board-turn .turn-mark .x-turn {
+  display: none;
 }
 .game__board-turn .turn-paragraph {
   font-size: 1.4rem;
@@ -197,12 +212,14 @@ body {
   align-items: center;
   box-shadow: 0 0.5rem #8596a0;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .restart-btn .restart-img {
   width: 1.7rem;
 }
 .restart-btn:hover {
   background-color: #DBE8ED;
+  transform: scale(0.96);
 }
 
 .game-container {
@@ -233,11 +250,22 @@ body {
   background-color: #1F3641;
   cursor: pointer;
 }
-.grid__board .grid__board-mark .picked-mark {
-  width: 4rem;
-}
 .grid__board .grid__board-mark:hover {
   background-image: url("/public/assets/icon-x-outline.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 4rem;
+}
+.grid__board .show-x {
+  background-image: url("/public/assets/icon-x.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 4rem;
+}
+.grid__board .show-o {
+  background-image: url("/public/assets/icon-o.svg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -297,6 +325,12 @@ body {
   .start__game-menu .start__pick-mark {
     width: 41.2rem;
   }
+  .start__game-menu .start__pick-mark .active-mark {
+    background-color: #A8BFC9;
+  }
+  .start__game-menu .start__pick-mark .active-mark .icon {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(6%) saturate(4628%) hue-rotate(158deg) brightness(100%) contrast(87%);
+  }
   .start__game-menu .start__pick-mark .start__icon-container .icon {
     width: 3.2rem;
   }
@@ -325,6 +359,12 @@ body {
   .start__menu-options .start__pick-mark .start__icon-container .icon {
     width: 3.2rem;
   }
+  .start__menu-options .start__pick-mark .active-mark {
+    background-color: #A8BFC9;
+  }
+  .start__menu-options .start__pick-mark .active-mark .icon {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(6%) saturate(4628%) hue-rotate(158deg) brightness(100%) contrast(87%);
+  }
 }
 @media (min-width: 768px) {
   .main-board-container .game__board {
@@ -352,6 +392,14 @@ body {
     width: 6.4rem;
   }
   .main-board-container .grid__board .grid__board-mark:hover {
+    background-size: 6.4rem;
+  }
+  .main-board-container .grid__board .show-x {
+    width: 14rem;
+    background-size: 6.4rem;
+  }
+  .main-board-container .grid__board .show-o {
+    width: 14rem;
     background-size: 6.4rem;
   }
   .main-board-container .game__info {
