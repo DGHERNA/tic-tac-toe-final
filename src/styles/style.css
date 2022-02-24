@@ -250,8 +250,15 @@ body {
   background-color: #1F3641;
   cursor: pointer;
 }
-.grid__board .grid__board-mark:hover {
+.grid__board .x-hover:hover {
   background-image: url("/public/assets/icon-x-outline.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 4rem;
+}
+.grid__board .o-hover:hover {
+  background-image: url("/public/assets/icon-o-outline.svg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;

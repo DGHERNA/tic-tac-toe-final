@@ -233,7 +233,7 @@
 }
 
 
-// Game board design
+//////////////////////////////////////// Game board design ///////////////////////////////
 
 .game-container {
     width: 32.8rem;
@@ -258,15 +258,23 @@
         border-radius: 1.5rem;
         background-color: $Semi-Dark-Navy;
         cursor: pointer;
+    }
 
+    .x-hover:hover {
+        background-image: url('/public/assets/icon-x-outline.svg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 4rem;
+        
+    }
 
-        &:hover {
-            background-image: url('/public/assets/icon-x-outline.svg');
-            background-repeat: no-repeat;
-            background-position-x: center;
-            background-position-y: center;
-            background-size: 4rem;
-        }
+    .o-hover:hover {
+        background-image: url('/public/assets/icon-o-outline.svg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 4rem;    
     }
 
     .show-x{

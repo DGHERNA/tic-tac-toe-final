@@ -1,22 +1,36 @@
 const boardContainer = document.querySelector('.main-board-container');
 const buttonCpu = document.querySelector('.button--cpu');
+const restartBtn = document.querySelectorAll('.restart-btn');  
 
-const marckPicked = document.querySelectorAll('.start__icon-container'),
-      Xcontainer = document.querySelector('.x-container'),
+const Xcontainer = document.querySelector('.x-container'),
       Ocontainer = document.querySelector('.o-container'),
       Xturn = document.querySelector('.x-turn'),
-      Oturn = document.querySelector('.o-turn');  
-
-
-
-const Xmark = document.querySelector('.x-mark');
-const Omark = document.querySelector('.o-mark');
-const boardMark = document.querySelectorAll('div .grid__board-mark');
+      Oturn = document.querySelector('.o-turn');
+      
+const Xmark = document.querySelector('.x-mark'),
+      Omark = document.querySelector('.o-mark'),
+      boardMark = document.querySelectorAll('div .grid__board-mark'),
+      showX = document.querySelector('show-x');
 
 
 buttonCpu.addEventListener('click', onButtoncpuClick);
+
 function onButtoncpuClick() {
     boardContainer.classList.remove('board__container-hidden');
+}
+
+restartBtn.forEach(e => {
+    e.addEventListener('click', cleanGameBoard);
+})
+
+function cleanGameBoard () {
+
+    boardMark.forEach((e)=>{
+        e.classList.remove('show-x');
+        e.classList.remove('show-o');
+        e.style.pointerEvents = 'initial';
+    })
+    
 }
 
 Xcontainer.addEventListener('click', function(){
@@ -39,17 +53,10 @@ Ocontainer.addEventListener('click', function () {
 })
 
 
-boardMark.forEach(boxMark => {
-    boxMark.setAttribute('onclick', 'clickedBoardMark(this)');
+boardMark.forEach(e => {
+    e.setAttribute('onclick', 'clickedBoardMark(this)');
+
 })
-
-// function clickedBoardMark (e) {
-//     e.currentTarget.classList.remove('hidden-x');
-// }
-
-// for (let i = 0; i< boardMark.length; i++) {
-//     boardMark[i].setAttribute('onclick', 'clickedBoardMark(this)');   
-// }
 
 
 function clickedBoardMark (element) {
@@ -63,7 +70,10 @@ function clickedBoardMark (element) {
         Oturn.style.display = 'none'
     }
     element.style.pointerEvents = 'none';
+    
 }
+
+
 
 
 
